@@ -1,11 +1,17 @@
 import { CORE_CONCEPTS } from "./data";
 import CoreConcept from "./components/CoreConcept";
 import Header from "./components/Header";
+import TabButton from "./components/TabButton";
 
 
 
 
 function App() {
+
+  const handleClick = (selectedButton) => {
+    console.log(selectedButton);
+    }
+
   return (
     <div>
       <Header />
@@ -30,6 +36,15 @@ function App() {
               description={CORE_CONCEPTS[3].description}
             />
           </ul>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton onClick={() => handleClick('Component')}>Components</TabButton>
+            <TabButton onClick={() => handleClick("Props")}>Props</TabButton>
+            <TabButton onClick={() => handleClick("Jsx")}>Jsx</TabButton>
+            <TabButton onClick={() => handleClick("State")}>State</TabButton>
+          </menu>
         </section>
       </main>
     </div>
