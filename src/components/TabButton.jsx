@@ -3,7 +3,7 @@ import React from "react";
 const TabButton = (props) => {
   return (
     <li>
-      <button onClick={props.onClick}>{props.children}</button>
+      <button className={props.isSelected ? 'active' : undefined} onClick={props.onClick}>{props.children}</button>
     </li>
   );
 };
